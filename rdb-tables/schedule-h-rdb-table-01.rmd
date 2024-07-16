@@ -104,7 +104,7 @@ all.versions <- paste( group.name.3, group.name.4, sep="|" )
 
 
 # leigh hospital 
-M3 <- "https://s3.amazonaws.com/irs-form-990/201801319349300130_public.xml"
+M3 <- "https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201801319349300130_public.xml"
 doc <- read_xml( M3 ) %>% xml_ns_strip()
 node.group <- xml_find_all( doc, all.versions )
 nodeset_to_df( node.group ) %>% pander()
@@ -215,25 +215,25 @@ group.name.4 <- "//ManagementCoAndJntVenturesGrp"
 all.versions <- paste( group.name.3, group.name.4, sep="|" )
 
 #READING HOSPITAL# skip column d #1orgs
-M1 <- "https://s3.amazonaws.com/irs-form-990/201821039349300712_public.xml"
+M1 <- "https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201821039349300712_public.xml"
 
 #ABINGTON MEMORIAL HOSPITAL# skip column d #5 orgs
-M2 <-  "https://s3.amazonaws.com/irs-form-990/201831359349306048_public.xml"
+M2 <-  "https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201831359349306048_public.xml"
 
 #LEHIGH VALLEY HOSPITAL # 4 orgs 
-M3 <- "https://s3.amazonaws.com/irs-form-990/201801319349300130_public.xml"
+M3 <- "https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201801319349300130_public.xml"
 
 
 #Charlotte Hungerford Hospital# skip column d # 2 orgs
-M4 <- "https://s3.amazonaws.com/irs-form-990/201802259349302005_public.xml"
+M4 <- "https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201802259349302005_public.xml"
 
 
 # fill none in the first row and the first two column #1 org
-M5 <- "https://s3.amazonaws.com/irs-form-990/201832259349301448_public.xml"
+M5 <- "https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201832259349301448_public.xml"
 
 
 # grady hospital does not contain part IV 
-M6 <- "https://s3.amazonaws.com/irs-form-990/201813189349303776_public.xml"
+M6 <- "https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201813189349303776_public.xml"
 
 
 

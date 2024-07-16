@@ -151,7 +151,7 @@ nodeset_to_df <- function( nodeset )
 # nodeset_to_df( node.group )
 
 # grady hospital
-V1 <- "https://s3.amazonaws.com/irs-form-990/201813189349303776_public.xml"
+V1 <- "https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles//201813189349303776_public.xml"
 doc <- read_xml( V1 ) %>% xml_ns_strip()
 node.group <- xml_find_all( doc, "//HospitalFacilitiesGrp" )
 nodeset_to_df( node.group ) %>% pander()
@@ -286,12 +286,12 @@ all.versions <- paste( group.name.1, group.name.2, sep="|" )
 
 
 # grady hospital
-V1 <- "https://s3.amazonaws.com/irs-form-990/201813189349303776_public.xml"
+V1 <- "https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201813189349303776_public.xml"
 # other hospitals?
-V2 <- "https://s3.amazonaws.com/irs-form-990/201832259349301448_public.xml"
-V3 <- "https://s3.amazonaws.com/irs-form-990/201841359349304794_public.xml"
-V4 <- "https://s3.amazonaws.com/irs-form-990/201811949349301226_public.xml"
-V5 <- "https://s3.amazonaws.com/irs-form-990/201801349349305480_public.xml"
+V2 <- "https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201832259349301448_public.xml"
+V3 <- "https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201841359349304794_public.xml"
+V4 <- "https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201811949349301226_public.xml"
+V5 <- "https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201801349349305480_public.xml"
 
 
 
@@ -376,31 +376,31 @@ for( i in hospitals$URL )
 
 ```{r, echo=F}
 hospitals <- 
-c("https://s3.amazonaws.com/irs-form-990/201700849349200100_public.xml", 
-"https://s3.amazonaws.com/irs-form-990/201720469349300742_public.xml", 
-"https://s3.amazonaws.com/irs-form-990/201700569349300015_public.xml", 
-"https://s3.amazonaws.com/irs-form-990/201720619349200117_public.xml", 
-"https://s3.amazonaws.com/irs-form-990/201720829349300702_public.xml", 
-"https://s3.amazonaws.com/irs-form-990/201700499349300305_public.xml", 
-"https://s3.amazonaws.com/irs-form-990/201730659349300323_public.xml", 
-"https://s3.amazonaws.com/irs-form-990/201720349349200332_public.xml", 
-"https://s3.amazonaws.com/irs-form-990/201740589349200034_public.xml", 
-"https://s3.amazonaws.com/irs-form-990/201720279349200612_public.xml", 
-"https://s3.amazonaws.com/irs-form-990/201710669349300526_public.xml", 
-"https://s3.amazonaws.com/irs-form-990/201740269349200414_public.xml", 
-"https://s3.amazonaws.com/irs-form-990/201700729349200615_public.xml", 
-"https://s3.amazonaws.com/irs-form-990/201730399349200518_public.xml", 
-"https://s3.amazonaws.com/irs-form-990/201700659349200765_public.xml", 
-"https://s3.amazonaws.com/irs-form-990/201700869349300725_public.xml", 
-"https://s3.amazonaws.com/irs-form-990/201710659349300716_public.xml", 
-"https://s3.amazonaws.com/irs-form-990/201730399349200103_public.xml", 
-"https://s3.amazonaws.com/irs-form-990/201710589349200106_public.xml", 
-"https://s3.amazonaws.com/irs-form-990/201720879349300862_public.xml", 
-"https://s3.amazonaws.com/irs-form-990/201710689349200301_public.xml", 
-"https://s3.amazonaws.com/irs-form-990/201710879349200216_public.xml", 
-"https://s3.amazonaws.com/irs-form-990/201740839349200129_public.xml", 
-"https://s3.amazonaws.com/irs-form-990/201721019349300912_public.xml", 
-"https://s3.amazonaws.com/irs-form-990/201731469349200213_public.xml"
+c("https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201700849349200100_public.xml", 
+"https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201720469349300742_public.xml", 
+"https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201700569349300015_public.xml", 
+"https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201720619349200117_public.xml", 
+"https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201720829349300702_public.xml", 
+"https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201700499349300305_public.xml", 
+"https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201730659349300323_public.xml", 
+"https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201720279349200612_public.xml", 
+"https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201720349349200332_public.xml", 
+"https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201710669349300526_public.xml", 
+"https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201740269349200414_public.xml", 
+"https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201700729349200615_public.xml", 
+"https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201730399349200518_public.xml", 
+"https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201700659349200765_public.xml", 
+"https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201700869349300725_public.xml", 
+"https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201710659349300716_public.xml", 
+"https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201730399349200103_public.xml", 
+"https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201710589349200106_public.xml", 
+"https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201720879349300862_public.xml", 
+"https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201710689349200301_public.xml", 
+"https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201710879349200216_public.xml", 
+"https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201740839349200129_public.xml", 
+"https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201721019349300912_public.xml", 
+"https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201731469349200213_public.xml"
+"https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201740589349200034_public.xml", 
 )
 ```
 
@@ -412,12 +412,12 @@ dat <- readRDS( gzcon( url( "https://www.dropbox.com/s/4ptsnryf64vkqlg/2016-EFIL
 # find likely schedule H filers
 dat.h <- dat[ grepl( "HOSPITAL", dat$NAME ) , ]
 hospitals <- head( dat.h$URL )
- [1] "https://s3.amazonaws.com/irs-form-990/201700849349200100_public.xml"
- [2] "https://s3.amazonaws.com/irs-form-990/201720469349300742_public.xml"
- [3] "https://s3.amazonaws.com/irs-form-990/201700569349300015_public.xml"
- [4] "https://s3.amazonaws.com/irs-form-990/201720619349200117_public.xml"
- [5] "https://s3.amazonaws.com/irs-form-990/201720829349300702_public.xml"
- [6] "https://s3.amazonaws.com/irs-form-990/201700499349300305_public.xml"
+ [1] "https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201700849349200100_public.xml"
+ [2] "https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201720469349300742_public.xml"
+ [3] "https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201700569349300015_public.xml"
+ [4] "https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201720619349200117_public.xml"
+ [5] "https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201720829349300702_public.xml"
+ [6] "https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201700499349300305_public.xml"
 
 ```
 

@@ -107,7 +107,7 @@ group.name.3 <- "//Form990ScheduleCPartI/Sec527PolOrgs"
 all.versions <- paste( group.name.1, group.name.2,group.name.3, sep="|" )
 
 # sierra club
-V1 <- "https://s3.amazonaws.com/irs-form-990/201843129349301954_public.xml"
+V1 <- "https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201843129349301954_public.xml"
 doc <- read_xml( V1 ) %>% xml_ns_strip()
 node.group <- xml_find_all( doc, all.versions )
 nodeset_to_df( node.group ) %>% pander()
@@ -253,20 +253,20 @@ all.versions2 <- paste( group.name.4, group.name.5, sep="|" )
 
 
 # sierra club 
-V1 <- "https://s3.amazonaws.com/irs-form-990/201843129349301954_public.xml"
+V1 <- "https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201843129349301954_public.xml"
 
 # SOUTHERN POVERTY LAW CENTER INC , do not have data in part I-C
-V2 <- "https://s3.amazonaws.com/irs-form-990/201900309349301030_public.xml"
+V2 <- "https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201900309349301030_public.xml"
 
 #AMERICAN CIVIL LIBERTIES UNION FOUNDATION INC, do not have data in part I-C
-V3 <- "https://s3.amazonaws.com/irs-form-990/201842749349301309_public.xml"
+V3 <- "https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201842749349301309_public.xml"
 
 #National Association for the Advancement of Colored People, do not have data in part I-C
-V4 <- "https://s3.amazonaws.com/irs-form-990/201813189349309906_public.xml"
+V4 <- "https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201813189349309906_public.xml"
 
 #PLANNED PARENTHOOD GLOBAL INC
 
-V5 <- "https://s3.amazonaws.com/irs-form-990/201821359349309027_public.xml"
+V5 <- "https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201821359349309027_public.xml"
 
 #for table-01
 list.of.tables <- list()

@@ -32,36 +32,47 @@
 build_index <- function( tax.years=2007:2022 )
 {
 
-   base <- "https://nccs-efile.s3.us-east-1.amazonaws.com/index/data-commons-efile-index-"
+  #  base <- "https://nccs-efile.s3.us-east-1.amazonaws.com/index/data-commons-efile-index-"
    
-   index.list <- list()
+  #  index.list <- list()
  
-   for( i in tax.years )
-   {
-     URL <- paste0( base, i, ".csv" )
-     df <- try( data.table::fread( URL, 
-                  colClasses = 'character', 
-                  data.table = FALSE,
-                  showProgress = FALSE ) )
-     index.list[[ as.character(i) ]] <- df 
-   }
+  #  for( i in tax.years )
+  #  {
+  #    URL <- paste0( base, i, ".csv" )
+  #    df <- try( data.table::fread( URL, 
+  #                 colClasses = 'character', 
+  #                 data.table = FALSE,
+  #                 showProgress = FALSE ) )
+  #    index.list[[ as.character(i) ]] <- df 
+  #  }
 
-   index <- dplyr::bind_rows( index.list )
+  # index <- dplyr::bind_rows( index.list )
+
+  index <- "https://gt990datalake-rawdata.s3.amazonaws.com/Indices/990xmls/index_all_years_efiledata_xmls_created_on_2024-03-29.csv"
+
+  #  new.order <- 
+  #  c("OrganizationName","EIN","FormType","TaxYear","URL",
+  #    "OrgType","TaxStatus","YearFormed",
+  #    "LegalDomicileState","LegalDomicileCountry",
+  #    "GrossReceipts","TotalRevenueCY","TotalExpensesCY",
+  #    "TotalAssetsBkEOY","TotalLiabilitiesBkEOY",
+  #    "TotalNetAssetsBkEOY",
+  #    "GroupAffiliatesIncluded","GroupExemptionNumber", 
+  #    "GroupReturnForAffiliates",
+  #    "TaxPeriod", "TaxPeriodBeginDate", "TaxPeriodEndDate",
+  #    "ReturnVersion","DateSigned","SubmittedOn","IndexedOn",  
+  #    "ObjectId","ReturnTs","BuildTs","DocStatus", 
+  #    "FileSizeBytes","FileSha256","ZipFile")
+  #  index <- index[ new.order ]
 
    new.order <- 
-   c("OrganizationName","EIN","FormType","TaxYear","URL",
-     "OrgType","TaxStatus","YearFormed",
-     "LegalDomicileState","LegalDomicileCountry",
-     "GrossReceipts","TotalRevenueCY","TotalExpensesCY",
-     "TotalAssetsBkEOY","TotalLiabilitiesBkEOY",
-     "TotalNetAssetsBkEOY",
-     "GroupAffiliatesIncluded","GroupExemptionNumber", 
-     "GroupReturnForAffiliates",
-     "TaxPeriod", "TaxPeriodBeginDate", "TaxPeriodEndDate",
-     "ReturnVersion","DateSigned","SubmittedOn","IndexedOn",  
-     "ObjectId","ReturnTs","BuildTs","DocStatus", 
-     "FileSizeBytes","FileSha256","ZipFile")
-   index <- index[ new.order ]
+   c("BuildTs","DAF","DateSigned","DocStatus","EIN","FileSha256","FileSizeBytes","FormType",
+    "GrossReceipts","GroupAffiliatesIncluded","GroupExemptionNumber","GroupReturnForAffiliates",
+    "IndexedOn","LegalDomicileCountry", "LegalDomicileState","ObjectId","OrgType",
+    "OrganizationName","ReturnTs","ReturnVersion","SubmittedOn","TaxPeriod","TaxPeriodBeginDate",
+    "TaxPeriodEndDate","TaxStatus","TaxYear","TotalAssetsBkEOY","TotalExpensesCY",
+    "TotalLiabilitiesBkEOY","TotalNetAssetsBkEOY","TotalRevenueCY","URL","Website","YearFormed","ZipFile")
+    index <- index[ new.order ]
 
    return( index )
 }

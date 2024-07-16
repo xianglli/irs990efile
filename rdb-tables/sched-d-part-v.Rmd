@@ -884,7 +884,7 @@ return( d )
 ```{r}
 get_object_id <- function( url )
 {
-    object.id <- gsub( "https://s3.amazonaws.com/irs-form-990/", "", url )
+    object.id <- gsub( "https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/", "", url )
     object.id <- gsub( "_public.xml", "", object.id )
     return( object.id )
 }
@@ -897,8 +897,8 @@ get_object_id <- function( url )
 
 ```{r}
 # i grabbed a couple that i know have data
-V1 <- "https://s3.amazonaws.com/irs-form-990/201700619349300840_public.xml"
-V2 <- "https://s3.amazonaws.com/irs-form-990/201710539349301106_public.xml"
+V1 <- "https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201700619349300840_public.xml"
+V2 <- "https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201710539349301106_public.xml"
 
 doc <- read_xml( V1 ) %>% xml_ns_strip()
 buildFUNCTION( doc, url=V1 )
@@ -916,12 +916,12 @@ We know these are Sched D filers already:
 ```{r, echo=T}
 orgs <- 
 c(
-"https://s3.amazonaws.com/irs-form-990/201700619349300840_public.xml",
-"https://s3.amazonaws.com/irs-form-990/201710539349301106_public.xml",
-"https://s3.amazonaws.com/irs-form-990/201710889349301316_public.xml",
-"https://s3.amazonaws.com/irs-form-990/201710869349300111_public.xml",
-"https://s3.amazonaws.com/irs-form-990/201730459349301343_public.xml",
-"https://s3.amazonaws.com/irs-form-990/201700589349300410_public.xml"
+"https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201700619349300840_public.xml",
+"https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201710539349301106_public.xml",
+"https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201710889349301316_public.xml",
+"https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201710869349300111_public.xml",
+"https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201730459349301343_public.xml",
+"https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201700589349300410_public.xml"
 )
 ```
 
